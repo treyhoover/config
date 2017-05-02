@@ -10,3 +10,10 @@ function color_my_prompt {
 }
 color_my_prompt
 
+function killport() {
+    lsof -t -i tcp:$1 | xargs kill
+}
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
